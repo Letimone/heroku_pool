@@ -1,0 +1,29 @@
+
+
+{%  extends 'base.html' %}
+
+{% block content %}
+
+ 
+  <a href='{{ url_for('classement') }}'>Classement</a>
+  <a href='{{ url_for('pointage') }}'>Pointage</a>
+  <form action="/" method="POST">
+  	<h2>Chat Box</h2>
+  	{{ chat_form.hidden_tag() }}
+  	{{ chat_form.chat() }}
+  	{{ chat_form.submit() }}
+  	
+  	
+  	<p></p>
+  	<h2>derniers commentaires</h2>
+  	<p>{{ chat_box[-1] }}</p>
+  	<br>
+  	<p>{{ chat_box[-2] }}</p>
+  	<br>
+  	<p>{{ chat_box[-3] }}</p>
+    <br>
+  	<p>{{ chat_box[-4] }}</p>
+  	<br>
+  	<p>{{ chat_box[-5] }}</p>
+
+{% endblock %}    
